@@ -1,6 +1,6 @@
 <script>
     export let name;
-    export let emoji;
+    export let logo;
     export let url;
     export let tech = [];
   </script>
@@ -9,7 +9,7 @@
     <header style="display: flex; align-items: center; justify-content: space-between;">
       <h3 style="margin: 0;">
         <a href={url} target="_blank" rel="noopener noreferrer">
-          {emoji} {name}
+          {logo} {name}
         </a>
       </h3>
     </header>

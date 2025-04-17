@@ -1,26 +1,30 @@
 <script>
-  // import { onMount } from "svelte";
-  // import { db } from "./firebase"; // or comment this out if you're using apps.json
-  // import { collection, getDocs } from "firebase/firestore";
+  import ProjectPanel from './lib/ProjectPanel.svelte';
 
-  // let apps = [];
-  // let loading = true;
+  /*
+    import { onMount } from "svelte";
+    import { db } from "./firebase"; // or comment this out if you're using apps.json
+    import { collection, getDocs } from "firebase/firestore";
 
-  // onMount(async () => {
-  //   try {
-  //     const querySnapshot = await getDocs(collection(db, "apps"));
-  //     apps = querySnapshot.docs.map((doc) => doc.data());
-  //   } catch (error) {
-  //     console.error("Error loading apps:", error);
-  //   } finally {
-  //     loading = false;
-  //   }
-  // });
+    let apps = [];
+    let loading = true;
+
+    onMount(async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "apps"));
+        apps = querySnapshot.docs.map((doc) => doc.data());
+      } catch (error) {
+        console.error("Error loading apps:", error);
+      } finally {
+        loading = false;
+      }
+    });
+  */
 
   // TODO: As long as we're using local JSON instead of Firebase, comment out the above and use this:
   import projects from './projects.json';
   let loading = false;
-
+  
 </script>
 
 <main class="container">
@@ -35,20 +39,18 @@
     {:else if projects.length === 0}
       <p><em>No projects yet. Check back soon!</em></p>
     {:else}
-      <ul>
+      <div class="grid">
         {#each projects as app}
-          <li style="margin-bottom: 1.5rem;">
-            <article>
-              <h3>
-                <a href={app.url} target="_blank" rel="noopener noreferrer">
-                  {app.emoji} {app.name}
-                </a>
-              </h3>
-              <p>{app.description}</p>
-            </article>
-          </li>
+          <div class="col">
+            <ProjectPanel
+              name={app.name}
+              logo={app.logo}
+              url={app.link}
+              tech={app.tech_stack}
+            ></ProjectPanel>
+          </div>
         {/each}
-      </ul>
+      </div>
     {/if}
   </section>
 
