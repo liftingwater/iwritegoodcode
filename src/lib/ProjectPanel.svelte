@@ -6,13 +6,15 @@
   </script>
   
   <article style="border: 1px solid var(--muted-border); border-radius: 0.5rem; padding: 1rem;">
-    <header style="display: flex; align-items: center; justify-content: space-between;">
-      <h3 style="margin: 0;">
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          {logo} {name}
-        </a>
-      </h3>
-    </header>
+    <button>
+        <header style="display: flex; align-items: center; justify-content: space-between;">
+        <h3 style="margin: 0;">
+            <a href={url} target="_blank" rel="noopener noreferrer">
+            {logo} {name}
+            </a>
+        </h3>
+        </header>
+    </button>
   
     <section style="margin-top: 0.5rem;">
       <strong>Built with:</strong>
