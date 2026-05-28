@@ -20,6 +20,11 @@
       <Guides />
     {/if}
   </div>
+
+  <footer>
+    <hr />
+    <p>Lovingly crafted, bit by bit, by Alex Wheeldon.</p>
+  </footer>
 </div>
 
 <style>

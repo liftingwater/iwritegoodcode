@@ -30,11 +30,6 @@
       </div>
     {/if}
   </section>
-
-  <footer>
-    <hr />
-    <p>Painstakingly crafted, bit by bit, by Alex Wheeldon.</p>
-  </footer>
 </main>
 
 <style>
