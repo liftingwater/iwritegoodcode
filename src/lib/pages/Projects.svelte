@@ -1,13 +1,12 @@
 <script>
   import ProjectPanel from "../ProjectPanel.svelte";
-  import projects from "../../projects.json";
+  import projects from "../../data/projects.json";
 
   let loading = false;
 </script>
 
 <main class="container">
   <header>
-    <h1>👋 Welcome to <strong>iwritegoodcode.com</strong></h1>
     <p>I build fun, useful apps for everyday problems. Check them out below:</p>
   </header>
 
