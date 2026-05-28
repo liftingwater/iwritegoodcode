@@ -2,49 +2,62 @@
 
 A modern portfolio and blog platform built with Svelte + Vite, featuring a multi-page navigation system for projects, blog posts, and software development guides.
 
-## Recommended IDE Setup
+## Getting Started
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+### Prerequisites
 
-## Need an official Svelte framework?
+- Node.js 18+ installed
+- A Firebase project (optional, for database functionality)
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+### Installation
 
-## Technical considerations
-
-**Why use this over SvelteKit?**
-
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
-
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
-
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+1. Clone the repository:
+```bash
+git clone https://github.com/liftingwater/iwritegoodcode.git
+cd iwritegoodcode
 ```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Set up environment variables (optional):
+```bash
+cp .env.example .env.local
+```
+
+Then edit `.env.local` with your Firebase credentials. If you don't have Firebase set up yet, you can skip this step and the site will still work with local JSON data.
+
+### Development
+
+Start the development server:
+```bash
+npm run dev
+```
+
+Open http://localhost:5173 in your browser.
+
+## Firebase Configuration
+
+This project uses Firebase for potential database functionality. Firebase credentials are stored as environment variables for security.
+
+### Setting Up Firebase
+
+1. Create a Firebase project at [Firebase Console](https://console.firebase.google.com)
+2. Copy `.env.example` to `.env.local`:
+   ```bash
+   cp .env.example .env.local
+   ```
+3. Add your Firebase credentials to `.env.local`:
+   - `VITE_FIREBASE_API_KEY` - Your API key
+   - `VITE_FIREBASE_AUTH_DOMAIN` - Your auth domain
+   - `VITE_FIREBASE_PROJECT_ID` - Your project ID
+   - `VITE_FIREBASE_STORAGE_BUCKET` - Your storage bucket
+   - `VITE_FIREBASE_MESSAGING_SENDER_ID` - Your messaging sender ID
+   - `VITE_FIREBASE_APP_ID` - Your app ID
+
+4. Never commit `.env.local` to version control (it's in `.gitignore`)
 
 ## Adding Blog Posts
 
@@ -86,7 +99,7 @@ Blog posts are managed through the `src/data/blog.json` file. To add a new blog 
 }
 ```
 
-### Adding Guides
+## Adding Guides
 
 Guides follow a similar structure but with different fields. Add entries to `src/data/guides.json`:
 
@@ -101,7 +114,7 @@ Guides follow a similar structure but with different fields. Add entries to `src
 }
 ```
 
-#### Guide Field Descriptions
+### Guide Field Descriptions
 
 - **id** (string, required): Unique identifier (e.g., `guide-001`)
 - **title** (string, required): The guide title
@@ -110,7 +123,7 @@ Guides follow a similar structure but with different fields. Add entries to `src
 - **topics** (array, required): Array of relevant topic tags
 - **readTime** (string, required): Estimated reading time
 
-#### Example Guide Entry
+### Example Guide Entry
 
 ```json
 {
@@ -123,13 +136,9 @@ Guides follow a similar structure but with different fields. Add entries to `src
 }
 ```
 
-## Deployment to Sevalla
+## Deployment
 
-This application can be deployed to Sevalla in two ways:
-
-### Option 1: Static Site Hosting (Recommended - Free)
-
-Sevalla offers free static site hosting. This is the simplest option for a static Svelte + Vite app.
+This application is deployed to Sevalla as a Static Site:
 
 1. Connect your GitHub repository to Sevalla
 2. Select "Static Site" as the deployment type
@@ -138,26 +147,7 @@ Sevalla offers free static site hosting. This is the simplest option for a stati
    - **Publish directory:** `dist`
 4. Deploy!
 
-No `start` command needed for this approach.
-
-### Option 2: Application Hosting
-
-If you prefer to use Application Hosting, the start command is already configured.
-
-1. Connect your GitHub repository to Sevalla
-2. Select "Application" as the deployment type
-3. The build and start commands are automatically detected:
-   - **Build command:** `npm run build`
-   - **Start command:** `npm start` (runs `npm run build && node server.js`)
-4. Deploy!
-
-The `server.js` file provides a simple Node.js HTTP server that:
-- Serves static files from the `dist` directory
-- Handles SPA routing (routes to `index.html` for non-existent routes)
-- Sets appropriate content types for all file types
-- Listens on the port specified by the `PORT` environment variable (defaults to 5000)
-
-### Local Testing
+## Starting Locally
 
 To test the production build locally:
 

@@ -1,20 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// TODO: Fill these in, put the secrets into a secrets manager. 
-const APIKEY = "";
-const IWRITEGOODCODE = "";
-const IWRITEGOODCODE_PROJECT_ID = "";
-const SENDER_ID = "";
-const APP_ID = "";
-
+// Firebase configuration using environment variables
 const firebaseConfig = {
-  apiKey: APIKEY,
-  authDomain: IWRITEGOODCODE + ".firebaseapp.com",
-  projectId: IWRITEGOODCODE_PROJECT_ID,
-  storageBucket: IWRITEGOODCODE + ".appspot.com",
-  messagingSenderId: SENDER_ID,
-  appId: APP_ID
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
