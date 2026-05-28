@@ -14,7 +14,6 @@
 
 <main class="container">
   <header>
-    <h1>🎓 Guides</h1>
     <p>Comprehensive guides on software development best practices, tools, and techniques.</p>
   </header>
 

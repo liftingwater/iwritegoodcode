@@ -7,7 +7,6 @@
 
 <main class="container">
   <header>
-    <h1>👋 Welcome to <strong>iwritegoodcode.com</strong></h1>
     <p>I build fun, useful apps for everyday problems. Check them out below:</p>
   </header>
 

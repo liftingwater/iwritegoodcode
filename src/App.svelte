@@ -9,6 +9,8 @@
 <div class="app-container">
   <Navigation />
 
+  <h1>👋 Welcome to <strong>iwritegoodcode.com</strong></h1>
+
   <div class="page-content">
     {#if $currentPage === 'projects'}
       <Projects />
