@@ -1,0 +1,66 @@
+[
+  {
+    "id": "guide-001",
+    "title": "Getting Started with Svelte",
+    "excerpt": "A comprehensive beginner's guide to building reactive components with Svelte. Learn the basics of reactive declarations, bindings, and component lifecycle.",
+    "difficulty": "Beginner",
+    "topics": ["Svelte", "JavaScript", "Web Development"],
+    "readTime": "10 min"
+  },
+  {
+    "id": "guide-002",
+    "title": "Advanced State Management with Stores",
+    "excerpt": "Deep dive into Svelte stores for managing application state. Explore writable, readable, and derived stores, and patterns for complex state management.",
+    "difficulty": "Intermediate",
+    "topics": ["Svelte", "State Management", "Best Practices"],
+    "readTime": "12 min"
+  },
+  {
+    "id": "guide-003",
+    "title": "Testing Svelte Components",
+    "excerpt": "Learn how to write effective unit tests for Svelte components using Vitest and Testing Library. Covers component testing patterns and best practices.",
+    "difficulty": "Intermediate",
+    "topics": ["Svelte", "Testing", "JavaScript"],
+    "readTime": "11 min"
+  },
+  {
+    "id": "guide-004",
+    "title": "Building a TypeScript Project from Scratch",
+    "excerpt": "Complete guide to setting up and configuring a TypeScript project. Covers tooling, configuration, best practices, and common pitfalls to avoid.",
+    "difficulty": "Intermediate",
+    "topics": ["TypeScript", "JavaScript", "Project Setup"],
+    "readTime": "13 min"
+  },
+  {
+    "id": "guide-005",
+    "title": "Performance Optimization Techniques",
+    "excerpt": "Advanced techniques for optimizing web application performance. Covers code splitting, lazy loading, caching strategies, and profiling tools.",
+    "difficulty": "Advanced",
+    "topics": ["Performance", "Web Development", "Optimization"],
+    "readTime": "15 min"
+  },
+  {
+    "id": "guide-006",
+    "title": "Designing Scalable Architecture",
+    "excerpt": "Enterprise-level guide to designing scalable software architecture. Covers design patterns, service orientation, and scaling strategies for large applications.",
+    "difficulty": "Advanced",
+    "topics": ["Architecture", "System Design", "Best Practices"],
+    "readTime": "16 min"
+  },
+  {
+    "id": "guide-007",
+    "title": "API Design Best Practices",
+    "excerpt": "Comprehensive guide to designing robust and user-friendly APIs. Covers RESTful principles, versioning, error handling, and documentation.",
+    "difficulty": "Intermediate",
+    "topics": ["API Design", "Backend", "Best Practices"],
+    "readTime": "12 min"
+  },
+  {
+    "id": "guide-008",
+    "title": "Docker for Developers",
+    "excerpt": "Practical guide to using Docker in your development workflow. Covers containerization, Docker Compose, and deploying containerized applications.",
+    "difficulty": "Intermediate",
+    "topics": ["Docker", "DevOps", "Deployment"],
+    "readTime": "14 min"
+  }
+]
