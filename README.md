@@ -1,6 +1,6 @@
-# Svelte + Vite
+# iwritegoodcode.com
 
-This template should help get you started developing with Svelte in Vite.
+A modern portfolio and blog platform built with Svelte + Vite, featuring a multi-page navigation system for projects, blog posts, and software development guides.
 
 ## Recommended IDE Setup
 
@@ -44,4 +44,81 @@ If you have state that's important to retain within a component, consider creati
 // An extremely simple external store
 import { writable } from 'svelte/store'
 export default writable(0)
+```
+
+## Adding Blog Posts
+
+Blog posts are managed through the `src/data/blog.json` file. To add a new blog post, add an entry to the JSON array with the following structure:
+
+```json
+{
+  "id": "blog-001",
+  "title": "Your Blog Post Title",
+  "excerpt": "A brief summary of your blog post that appears in the listing...",
+  "author": "Your Name",
+  "date": "2024-05-15",
+  "category": "Best Practices",
+  "readTime": "5 min"
+}
+```
+
+### Field Descriptions
+
+- **id** (string, required): Unique identifier for the blog post (e.g., `blog-001`, `blog-002`)
+- **title** (string, required): The title of your blog post
+- **excerpt** (string, required): A brief summary (100-150 characters recommended) that appears in the blog listing
+- **author** (string, required): Name of the author
+- **date** (string, required): Publication date in `YYYY-MM-DD` format
+- **category** (string, required): Topic category for filtering (e.g., "Best Practices", "Testing", "Architecture")
+- **readTime** (string, required): Estimated reading time (e.g., "5 min", "10 min")
+
+### Example Blog Post Entry
+
+```json
+{
+  "id": "blog-007",
+  "title": "Mastering Async/Await in JavaScript",
+  "excerpt": "Learn how to write clean, readable asynchronous code using async/await patterns and error handling strategies.",
+  "author": "Alex Wheeldon",
+  "date": "2024-05-22",
+  "category": "Best Practices",
+  "readTime": "7 min"
+}
+```
+
+### Adding Guides
+
+Guides follow a similar structure but with different fields. Add entries to `src/data/guides.json`:
+
+```json
+{
+  "id": "guide-001",
+  "title": "Your Guide Title",
+  "excerpt": "A comprehensive description of what this guide covers...",
+  "difficulty": "Beginner",
+  "topics": ["Topic1", "Topic2", "Topic3"],
+  "readTime": "10 min"
+}
+```
+
+#### Guide Field Descriptions
+
+- **id** (string, required): Unique identifier (e.g., `guide-001`)
+- **title** (string, required): The guide title
+- **excerpt** (string, required): Description of the guide content
+- **difficulty** (string, required): Skill level - `"Beginner"`, `"Intermediate"`, or `"Advanced"`
+- **topics** (array, required): Array of relevant topic tags
+- **readTime** (string, required): Estimated reading time
+
+#### Example Guide Entry
+
+```json
+{
+  "id": "guide-009",
+  "title": "Introduction to Web Accessibility",
+  "excerpt": "Learn the fundamentals of building accessible web applications that work for everyone.",
+  "difficulty": "Beginner",
+  "topics": ["Accessibility", "Web Development", "Best Practices"],
+  "readTime": "8 min"
+}
 ```
