@@ -17,7 +17,7 @@
     <p>Comprehensive guides on software development best practices, tools, and techniques.</p>
   </header>
 
-  <section class="filters">
+  <!-- <section class="filters">
     <div class="filter-buttons">
       {#each difficulties as difficulty}
         <button
@@ -29,7 +29,7 @@
         </button>
       {/each}
     </div>
-  </section>
+  </section> -->
 
   <section>
     {#if loading}
