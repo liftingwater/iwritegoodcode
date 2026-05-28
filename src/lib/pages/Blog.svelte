@@ -14,7 +14,6 @@
 
 <main class="container">
   <header>
-    <h1>📝 Blog</h1>
     <p>Essays on software development, code quality, and building better products.</p>
   </header>
 
