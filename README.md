@@ -122,3 +122,48 @@ Guides follow a similar structure but with different fields. Add entries to `src
   "readTime": "8 min"
 }
 ```
+
+## Deployment to Sevalla
+
+This application can be deployed to Sevalla in two ways:
+
+### Option 1: Static Site Hosting (Recommended - Free)
+
+Sevalla offers free static site hosting. This is the simplest option for a static Svelte + Vite app.
+
+1. Connect your GitHub repository to Sevalla
+2. Select "Static Site" as the deployment type
+3. Configure the following settings:
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+4. Deploy!
+
+No `start` command needed for this approach.
+
+### Option 2: Application Hosting
+
+If you prefer to use Application Hosting, the start command is already configured.
+
+1. Connect your GitHub repository to Sevalla
+2. Select "Application" as the deployment type
+3. The build and start commands are automatically detected:
+   - **Build command:** `npm run build`
+   - **Start command:** `npm start` (runs `npm run build && node server.js`)
+4. Deploy!
+
+The `server.js` file provides a simple Node.js HTTP server that:
+- Serves static files from the `dist` directory
+- Handles SPA routing (routes to `index.html` for non-existent routes)
+- Sets appropriate content types for all file types
+- Listens on the port specified by the `PORT` environment variable (defaults to 5000)
+
+### Local Testing
+
+To test the production build locally:
+
+```bash
+npm run build
+npm start
+```
+
+The application will be available at `http://localhost:5000`
