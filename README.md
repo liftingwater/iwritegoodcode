@@ -156,4 +156,4 @@ npm run build
 npm start
 ```
 
-The application will be available at `http://localhost:5000`
+The application will be available at `http://localhost:8080`

@@ -17,7 +17,7 @@
     <p>Essays on software development, code quality, and building better products.</p>
   </header>
 
-  <section class="filters">
+  <!-- <section class="filters">
     <div class="filter-buttons">
       {#each categories as category}
         <button
@@ -29,7 +29,7 @@
         </button>
       {/each}
     </div>
-  </section>
+  </section> -->
 
   <section>
     {#if loading}
