@@ -10,11 +10,8 @@
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css"
     />
     <script>
-      // Initialize theme from localStorage or system preference before render
-      const storedTheme = localStorage.getItem('theme');
-      const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      const theme = storedTheme || systemPreference;
-      document.documentElement.setAttribute('data-theme', theme);
+      // Default to dark mode
+      document.documentElement.setAttribute('data-theme', 'dark');
     </script>
   </head>
   <body>
