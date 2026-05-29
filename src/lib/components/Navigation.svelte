@@ -30,6 +30,8 @@
 
 <style>
   .nav-container {
+    display: flex;
+    justify-content: center;
     margin-bottom: 2rem;
     border-bottom: 2px solid var(--muted-border-color);
     padding-bottom: 1rem;
@@ -47,6 +49,7 @@
     background-color: transparent;
     border: 2px solid var(--muted-border-color);
     border-radius: 0.5rem;
+    color: var(--form-element-focus-border-color);
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
