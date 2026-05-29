@@ -1,5 +1,6 @@
 <script>
   import { currentPage, navigateTo } from '../../stores/navigation';
+  import { theme } from '../../stores/theme';
 </script>
 
 <nav class="nav-container">
@@ -24,6 +25,18 @@
       on:click={() => navigateTo('guides')}
     >
       Guides
+    </button>
+    <button
+      class="theme-toggle"
+      on:click={() => theme.toggle()}
+      aria-label="Toggle theme"
+      title="Toggle light/dark mode"
+    >
+      {#if $theme === 'light'}
+        🌙
+      {:else}
+        ☀️
+      {/if}
     </button>
   </div>
 </nav>
@@ -65,5 +78,25 @@
     background-color: var(--form-element-focus-border-color);
     border-color: var(--form-element-focus-border-color);
     color: var(--primary-focus);
+  }
+
+  .theme-toggle {
+    padding: 0.75rem 1rem;
+    background-color: transparent;
+    border: 2px solid var(--muted-border-color);
+    border-radius: 0.5rem;
+    color: var(--form-element-focus-border-color);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+
+  .theme-toggle:hover {
+    border-color: var(--form-element-focus-border-color);
+    background-color: var(--secondary-background);
   }
 </style>
