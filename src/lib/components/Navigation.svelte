@@ -1,51 +1,69 @@
 <script>
   import { currentPage, navigateTo } from '../../stores/navigation';
   import { theme } from '../../stores/theme';
+  import { onMount } from 'svelte';
+
+  let currentTheme = 'light';
+
+  onMount(() => {
+    // Subscribe to theme changes
+    const unsubscribe = theme.subscribe(value => {
+      currentTheme = value;
+    });
+    return unsubscribe;
+  });
 </script>
 
-<nav class="nav-container">
-  <div class="nav-buttons">
-    <button
-      class="nav-button"
-      class:active={$currentPage === 'projects'}
-      on:click={() => navigateTo('projects')}
-    >
-      Projects
-    </button>
-    <button
-      class="nav-button"
-      class:active={$currentPage === 'blog'}
-      on:click={() => navigateTo('blog')}
-    >
-      Blog
-    </button>
-    <button
-      class="nav-button"
-      class:active={$currentPage === 'guides'}
-      on:click={() => navigateTo('guides')}
-    >
-      Guides
-    </button>
-    <button
-      class="theme-toggle"
-      on:click={() => theme.toggle()}
-      aria-label="Toggle theme"
-      title="Toggle light/dark mode"
-    >
-      {#if $theme === 'light'}
-        🌙
-      {:else}
-        ☀️
-      {/if}
-    </button>
-  </div>
-</nav>
+<div class="nav-wrapper">
+  <nav class="nav-container">
+    <div class="nav-buttons">
+      <button
+        class="nav-button"
+        class:active={$currentPage === 'projects'}
+        on:click={() => navigateTo('projects')}
+      >
+        Projects
+      </button>
+      <button
+        class="nav-button"
+        class:active={$currentPage === 'blog'}
+        on:click={() => navigateTo('blog')}
+      >
+        Blog
+      </button>
+      <button
+        class="nav-button"
+        class:active={$currentPage === 'guides'}
+        on:click={() => navigateTo('guides')}
+      >
+        Guides
+      </button>
+    </div>
+  </nav>
+
+  <button
+    class="theme-toggle"
+    on:click={() => theme.toggle()}
+    aria-label="Toggle theme"
+    title="Toggle light/dark mode"
+  >
+    {#if currentTheme === 'light'}
+      🌙
+    {:else}
+      ☀️
+    {/if}
+  </button>
+</div>
 
 <style>
+  .nav-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
   .nav-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
     border-bottom: 2px solid var(--muted-border-color);
     padding-bottom: 1rem;
   }
@@ -81,7 +99,10 @@
   }
 
   .theme-toggle {
-    padding: 0.75rem 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 0.75rem;
     background-color: transparent;
     border: 2px solid var(--muted-border-color);
     border-radius: 0.5rem;
@@ -92,7 +113,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: auto;
   }
 
   .theme-toggle:hover {
