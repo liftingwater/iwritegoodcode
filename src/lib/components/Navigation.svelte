@@ -47,6 +47,7 @@
     background-color: transparent;
     border: 2px solid var(--muted-border-color);
     border-radius: 0.5rem;
+    color: var(--form-element-focus-border-color);
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
