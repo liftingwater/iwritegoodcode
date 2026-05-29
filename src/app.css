@@ -49,6 +49,12 @@ h1 {
   text-align: center;
 }
 
+/* Dark mode button styles */
+[data-theme="dark"] button {
+  color: var(--contrast);
+  border-color: var(--muted-border-color);
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -56,12 +62,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #f9f9f9;
+  background-color: transparent;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--form-element-focus-border-color);
 }
 button:focus,
 button:focus-visible {
@@ -76,3 +82,4 @@ button:focus-visible {
   max-width: 960px;
   margin: 0 auto;
 }
+

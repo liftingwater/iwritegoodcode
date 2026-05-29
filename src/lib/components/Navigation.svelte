@@ -49,7 +49,7 @@
     background-color: transparent;
     border: 2px solid var(--muted-border-color);
     border-radius: 0.5rem;
-    color: var(--contrast);
+    color: white;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
@@ -64,6 +64,6 @@
   .nav-button.active {
     background-color: var(--form-element-focus-border-color);
     border-color: var(--form-element-focus-border-color);
-    color: var(--primary-focus);
+    color: white;
   }
 </style>
