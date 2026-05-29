@@ -30,6 +30,8 @@
 
 <style>
   .nav-container {
+    display: flex;
+    justify-content: center;
     margin-bottom: 2rem;
     border-bottom: 2px solid var(--muted-border-color);
     padding-bottom: 1rem;
